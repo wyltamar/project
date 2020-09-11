@@ -1,0 +1,47 @@
+.user-parent {
+  height: 100%;
+  padding: 0 2px;
+  background-color: #add8e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 750px;
+}
+
+.user {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 30px 80px 30px;
+}
+
+.user-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-title img {
+  width: 60px;
+  height: 60px;
+  padding-top: 5px;
+}
+
+.user-title h2 {
+  font-size: 20px;
+  padding-inline-end: 05px;
+}
+
+.user .form-group2 label {
+  font-size: 14px;
+}
+
+.user .form-group2 input {
+  font-size: 14px;
+}
+
+.user button {
+  margin-top: 20px;
+  width: 100%;
+}
