@@ -22,19 +22,16 @@
         </div>
         <form>
           <div class="form-group2">
-            <label for="inputId">Id</label>
+            <label for="inputId">*Id</label>
             <input
               type="text"
               class="form-control"
               name="inputId"
               aria-describedby="idHelpUser"
             />
-            <small id="idHelpUser" class="form-text text-muted"
-              >Campo obirgatório</small
-            >
           </div>
           <div class="form-group2">
-            <label for="inputNameUser">Nome</label>
+            <label for="inputNameUser">*Nome</label>
             <input
               type="text"
               class="form-control"
@@ -42,24 +39,15 @@
               aria-describedby="nameHelpUser"
               placeholder="Nome completo"
             />
-            <small id="nameHelpUser" class="form-text text-muted"
-              >Campo obirgatório</small
-            >
           </div>
           <div class="form-group2">
-            <label for="inputLoginUser">Login</label>
+            <label for="inputLoginUser">*Login</label>
             <input type="text" class="form-control" name="inputLoginUser" />
-            <small id="loginHelpUser" class="form-text text-muted"
-              >Campo obirgatório</small
-            >
           </div>
 
           <div class="form-group2">
-            <label for="inputSenhaUser">Senha</label>
+            <label for="inputSenhaUser">*Senha</label>
             <input type="text" class="form-control" name="inputSenhaUser" />
-            <small id="senhaHelpUser" class="form-text text-muted"
-              >Campo obirgatório</small
-            >
           </div>
 
           <div class="form-group2">
@@ -70,14 +58,11 @@
               name="inputTelephoneUser"
               aria-describedby="telephoneHelpUser"
             />
-            <small id="telephoneHelpUser" class="form-text text-muted"
-              >Campo obirgatório</small
-            >
           </div>
           <div class="form-group2">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01"
-                >Perfil</label
+                >*Perfil</label
               >
             </div>
             <select class="form-control" name="inputGroupSelectPerfil">
@@ -88,6 +73,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
+        <label for="alerta" style="color: red">*Campo obirgatório</label>
       </div>
     </div>
     <script
