@@ -3,64 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SGOS- Usuário</title>
+    <title>SGOS- Usuario</title>
     <link rel="stylesheet" href="../css/all.css" />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
-    ></script>
+    />
   </head>
-  <div class="user-parent">
-    <div class="user">
-      <div class="user-title">
-        <img src="../img/logo-system.jpg" alt="imagem de um computador" />
-        <h2>SGOS</h2>
-      </div>
-      <form>
-        <div class="form-group">
-          <label for="inputName">Nome</label>
-          <input
-            type="text"
-            class="form-control"
-            name="inputName"
-            aria-describedby="nameHelp"
-            placeholder="Nome completo"
-          />
-        </div>
-        <small id="nameHelp" class="form-text text-muted"
-          >Campo obirgatório</small
-        >
-        <div class="form-group">
-          <label for="inputLogin">Login</label>
-          <input type="text" class="form-control" name="inputLogin" />
-        </div>
-        <small id="loginHelp" class="form-text text-muted"
-          >Campo obirgatório</small
-        >
-        <div class="form-group">
-          <label for="inputAddress">Senha</label>
-          <input type="text" class="form-control" name="inputSenha" />
-        </div>
-        <small id="senhaHelp" class="form-text text-muted"
-          >Campo obirgatório</small
-        >
 
-        <div class="form-group">
-          <label for="inputTelephone">Fone</label>
-          <input
-            type="text"
-            class="form-control"
-            name="inputTelephone"
-            aria-describedby="telephoneHelp"
-          />
-        </div>
-
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-      </form>
-    </div>
-  </div>
   <body>
+    <div class="user-parent">
+      <div class="user">
+        <div class="user-title">
+          <img src="../img/logo-system.jpg" alt="imagem de um computador" />
+          <h2>SGOS</h2>
+        </div>
+        <form>
+          <div class="form-group2">
+            <label for="inputNameUser">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              name="inputNameUser"
+              aria-describedby="nameHelpUser"
+              placeholder="Nome completo"
+            />
+            <small id="nameHelpUser" class="form-text text-muted"
+              >Campo obirgatório</small
+            >
+          </div>
+          <div class="form-group2">
+            <label for="inputLoginUser">Login</label>
+            <input type="text" class="form-control" name="inputLoginUser" />
+            <small id="loginHelpUser" class="form-text text-muted"
+              >Campo obirgatório</small
+            >
+          </div>
+
+          <div class="form-group2">
+            <label for="inputSenhaUser">Senha</label>
+            <input type="text" class="form-control" name="inputSenhaUser" />
+            <small id="senhaHelpUser" class="form-text text-muted"
+              >Campo obirgatório</small
+            >
+          </div>
+
+          <div class="form-group2">
+            <label for="inputTelephoneUser">Fone</label>
+            <input
+              type="text"
+              class="form-control"
+              name="inputTelephoneUser"
+              aria-describedby="telephoneHelpUser"
+            />
+            <small id="telephoneHelpUser" class="form-text text-muted"
+              >Campo obirgatório</small
+            >
+          </div>
+          <div class="form-group2">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01"
+                >Perfil</label
+              >
+            </div>
+            <select class="form-control" name="inputGroupSelectPerfil">
+              <option selected>Selecione</option>
+              <option value="1">Administrador</option>
+              <option value="2">Usuario</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+      </div>
+    </div>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
