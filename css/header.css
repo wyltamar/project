@@ -1,0 +1,21 @@
+.flex-deshboard header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: white;
+  padding: 0 30px;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
+}
+
+.flex-deshboard header .icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.flex-deshboard header a {
+  text-decoration: none;
+}
