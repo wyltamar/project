@@ -3,3 +3,5 @@
 @import 'login.css';
 @import 'client.css';
 @import 'user.css';
+@import 'sidebar.css';
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');

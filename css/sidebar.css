@@ -1,0 +1,81 @@
+div.flex-deshboard {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+sidebar {
+  display: block;
+  height: 100%;
+  width: 300px;
+  background-color: blue;
+}
+
+main {
+  display: block;
+  height: 100%;
+  background-color: cornflowerblue;
+  width: calc(100% - 300px);
+}
+
+.flex-deshboard header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: white;
+  padding: 0 30px;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
+}
+
+.flex-deshboard header .icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.flex-deshboard header a {
+  text-decoration: none;
+}
+
+sidebar .sidebar-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
+}
+
+sidebar .sidebar-title img {
+  padding-top: 10px;
+  height: 210px;
+  width: 300px;
+}
+
+sidebar .sidebar-title h2 {
+  font-size: 25px;
+  margin-top: 2px;
+}
+
+div.menu {
+  border-right: 1px solid rgba(0, 0, 0, 0.0625);
+}
+
+div .menu ul {
+  list-style-type: none;
+}
+
+div .menu ul li {
+  border: 1px solid black;
+  padding: 10px 30px;
+  width: 100%;
+  background-color: white;
+}
+
+div .menu img {
+  padding-left: 10px;
+}
