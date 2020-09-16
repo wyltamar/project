@@ -43,7 +43,7 @@ div .menu ul {
 div .menu ul li {
   padding: 10px 20px;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: rgb(225, 229, 236);
   display: flex;
   flex-direction: row;
   align-items: center;
