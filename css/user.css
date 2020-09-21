@@ -45,3 +45,7 @@
   margin-top: 20px;
   width: 100%;
 }
+
+.user-parent label.obs {
+  color: red;
+}
