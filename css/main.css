@@ -1,7 +1,7 @@
 main {
   display: block;
   height: 100%;
-  background-color: rgb(225, 229, 236);
+  background-color: #add8e6;
   width: calc(100% - 300px);
 }
 
