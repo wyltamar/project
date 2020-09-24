@@ -1,0 +1,27 @@
+.content-os {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #add8e6;
+}
+
+#data {
+  width: 20%;
+}
+
+#numberOs {
+  width: 20%;
+}
+
+form {
+  height: 100%;
+  width: 43%;
+  padding-top: 2px;
+  position: relative;
+  align-self: start;
+}
+
+#valor {
+  width: 20%;
+}
