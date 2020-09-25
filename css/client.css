@@ -34,10 +34,10 @@ h2 {
 
 .register .form-group input {
   font-size: 14px;
-  width: 200%;
+  width: 100%;
 }
 
 .register button {
   margin-top: 20px;
-  width: 200%;
+  width: 100%;
 }

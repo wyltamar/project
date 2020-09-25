@@ -37,14 +37,14 @@ h5 {
 
 .login-form-wrapper {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
 .login-form-wrapper button {
-  width: 100%;
+  width: 96%;
   margin-top: 10px;
 }
 
