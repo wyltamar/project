@@ -9,3 +9,8 @@ function loadDoc(url) {
   xhttp.open('GET', url, true);
   xhttp.send();
 }
+
+var data = new Date();
+document.getElementById('lblData').innerHTML = `Data: ${
+  data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear()
+}`;
