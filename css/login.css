@@ -42,10 +42,15 @@ h5 {
   flex-direction: column;
   padding: 20px;
 }
+.login form {
+  width: 100%;
+  margin-left: 10px;
+}
 
 .login-form-wrapper button {
   width: 96%;
   margin-top: 10px;
+  margin-left: 10px;
 }
 
 .login-form-wrapper button {
