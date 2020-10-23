@@ -5,72 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SGOS- Painel de controle</title>
     <link rel="stylesheet" href="../css/all.css" />
-    <link rel="stylesheet"
+    <link
+      rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous">
-    <link rel="stylesheet"
-      href="../node_modules/font-awesome/css/font-awesome.min.css">
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/font-awesome/css/font-awesome.min.css"
+    />
   </head>
 
   <body>
     <div class="flex-deshboard">
       <sidebar>
         <div class="sidebar-title">
-          <img src="../img/logo-system.jpg" alt="computador">
+          <img src="../img/logo-system.jpg" alt="computador" />
           <h2>SGOS</h2>
         </div>
         <div class="menu">
           <ul>
-
             <li>
-              <button tipe="button" onclick="loadDoc('client.html')">CLIENTE</button>
+              <button tipe="button" onclick="loadDoc('client.html')">
+                CLIENTE
+              </button>
             </li>
-            <img src="../img/user.ico" class="icon-menu">
+            <img src="../img/user.ico" class="icon-menu" />
             <li>
-              <button tipe="button" onclick="loadDoc('user.html')">USUÁRIO</button>
+              <button tipe="button" onclick="loadDoc('user.html')">
+                USUÁRIO
+              </button>
             </li>
-            <img src="../img/user.ico" class="icon-menu">
+            <img src="../img/user.ico" class="icon-menu" />
             <li>
               <button tipe="button" onclick="loadDoc('os.html')">OS</button>
             </li>
-            <img src="../img/paper.ico" class="icon-menu">
-
-
+            <img src="../img/paper.ico" class="icon-menu" />
           </ul>
         </div>
       </sidebar>
       <main>
         <header>
-
-          <a href="dashboard.html">Home<img src="../img/home.ico" class="icon"></a>
-          <a href="../index.html">Logout<img src="../img/logout.ico"
-              class="icon"></a>
+          <a href="dashboard.html"
+            >Home<img src="../img/home.ico" class="icon"
+          /></a>
+          <a href="../index.html"
+            >Logout<img src="../img/logout.ico" class="icon"
+          /></a>
         </header>
         <div class="main-content" id="box-content">
           <div class="panel">
             <h1>Seja bem vindo!</h1>
-            <label for="usuario" id="lblUsuario">Usuário: Wyltamar Douglas
+            <label for="usuario" id="lblUsuario"
+              >Usuário: Wyltamar Douglas
             </label>
             <label for="data" id="lblData">Data: ERRO!</label>
           </div>
-
         </div>
       </main>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous">
-    </script>
+      crossorigin="anonymous"
+    ></script>
     <script src="../js/dashboard.js"></script>
-
+    <script src="/js/client.js"></script>
   </body>
 </html>
