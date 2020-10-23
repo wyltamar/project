@@ -1,14 +1,15 @@
 function inserirCliente() {
   var nome = document.getElementsByName('inputName')[0].value;
-  var endereco = document.getElementsByName('inputAddress')[1].value;
-  var telefone = document.getElementsByName('inputTelephone')[2].value;
-  var email = document.getElementsByName('inputEmail')[3].value;
+  var endereco = document.getElementsByName('inputAddress')[0].value;
+  var telefone = document.getElementsByName('inputTelephone')[0].value;
+  var email = document.getElementsByName('inputEmail')[0].value;
 
+  //prettier-ignore
   var cliente = {
     nome: nome,
     endereco: endereco,
     telefone: telefone,
-    email: email,
+    email: email
   };
 
   var xhttp = new XMLHttpRequest();
