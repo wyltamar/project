@@ -7,10 +7,10 @@ function inserirUsuario() {
   var perfil = document.getElementsByName('selectPerfil')[0].value;
 
   switch (perfil) {
-    case 1:
+    case '1':
       perfil = 'Administrador';
       break;
-    case 2:
+    case '2':
       perfil = 'Usuário';
       break;
 
