@@ -30,11 +30,11 @@
         <div class="form-group">
           <label for="inputTelephone">*Telefone</label>
           <input type="text" class="form-control" name="inputTelephone" aria-describedby="telephoneHelp"
-            placeholder="inclusive ddd" />
+            placeholder="cod. área e número" required minlength="12" maxlength="12" />
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" name="inputEmail">
+            <input type="text" class="form-control" name="inputEmail" placeholder="email@exemplo.com">
           </div>
           <button type="button" class="btn btn-primary" onclick="filtrarCliente()">Pesquisar Cliente</button>
           <button type="button" class="btn btn-success" onclick="inserirCliente()">Inserir Cliente</button>
