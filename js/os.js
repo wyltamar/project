@@ -8,8 +8,7 @@ function InserirOS() {
   var tecnico = document.getElementById('tecnico').value;
   var valor = document.getElementById('valor').value;
   var checkOs = document.getElementsByClassName('check-os')[0].checked;
-  var checkOrcamento = document.getElementsByClassName('check-orcamento')[0]
-    .checked;
+
   switch (situacaoOs) {
     case '1':
       situacaoOs = 'Selecione';
