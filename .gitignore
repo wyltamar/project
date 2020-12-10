@@ -3,5 +3,5 @@ font-awesome
 *.json
 jQuery
 todo.text
-
+node_modules/
 
