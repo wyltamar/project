@@ -1,15 +1,15 @@
-function inserirCliente() {
-  var nome = document.getElementsByName('inputName')[0].value;
-  var endereco = document.getElementsByName('inputAddress')[0].value;
-  var telefone = document.getElementsByName('inputTelephone')[0].value;
-  var email = document.getElementsByName('inputEmail')[0].value;
+var nome = document.getElementsByName('inputName')[0];
+var endereco = document.getElementsByName('inputAddress')[0];
+var telefone = document.getElementsByName('inputTelephone')[0];
+var email = document.getElementsByName('inputEmail')[0];
 
+function inserirCliente(cliente) {
   //prettier-ignore
   var cliente = {
-    nome: nome,
-    endereco: endereco,
-    telefone: telefone,
-    email: email
+    nome: nome.value,
+    endereco: endereco.value,
+    telefone: telefone.value,
+    email: email.value
   };
 
   var xhttp = new XMLHttpRequest();
