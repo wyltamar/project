@@ -39,3 +39,12 @@ function inserirCliente() {
   xhttp.setRequestHeader('Content-Type', 'application/json');
   xhttp.send(JSON.stringify(cliente));
 }
+
+//prettier-ignore
+function limparCamposCliente(){
+  document.getElementsByName('inputName')[0].value = "";
+  document.getElementsByName('inputAddress')[0].value = "";
+  document.getElementsByName('inputTelephone')[0].value = "";
+  document.getElementsByName('inputEmail')[0].value = "";
+
+}
