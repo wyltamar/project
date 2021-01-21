@@ -1,18 +1,18 @@
 function validaNome() {
   var nome = document.getElementsByName('inputName')[0].value;
   if (nome == '') {
-    document.getElementsByClassName('btn btn-success')[0].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     window.alert('O campo nome é obrigatório!');
-  } else document.getElementsByClassName('btn btn-success')[0].disabled = false;
+  } else document.getElementsByClassName('btn btn-primary')[0].disabled = false;
 }
 
 function validaTelefone() {
   validaNome();
   var telefone = document.getElementsByName('inputTelephone')[0].value;
   if (telefone == '') {
-    document.getElementsByClassName('btn btn-success')[0].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     window.alert('O campo telefone é obrigatório!');
-  } else document.getElementsByClassName('btn btn-success')[0].disabled = false;
+  } else document.getElementsByClassName('btn btn-primary')[0].disabled = false;
 }
 
 function inserirCliente() {
