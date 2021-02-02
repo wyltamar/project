@@ -18,6 +18,9 @@ function fetchData() {
           .querySelector('#all-clients')
           .insertAdjacentHTML('afterbegin', html);
       }
+    })
+    .catch((Error) => {
+      console.log(Error);
     });
 }
 
