@@ -11,12 +11,15 @@
 </head>
 
 <body>
-  <div class="title-client">
-    <h2>Cliente</h2>
-  </div>
+
   <div class="register-parent">
     <div class="register">
       <form>
+        <div class="form-group">
+          <label for="inputId">Id</label>
+          <input type="text" class="form-control" name="inputId" aria-describedby="nameHelp"
+            placeholder="Id é obrigatório apenas para pesquisar clientes" />
+        </div>
         <div class="form-group">
           <label for="inputName">*Nome</label>
           <input type="text" class="form-control" name="inputName" aria-describedby="nameHelp"
@@ -36,11 +39,11 @@
             <label for="email">Email</label>
             <input type="text" class="form-control" name="inputEmail" placeholder="email@exemplo.com">
           </div>
-          <button type="button" class="btn btn-primary" onclick="filtrarCliente()">Pesquisar Cliente</button>
           <button type="button" class="btn btn-primary" onclick="inserirCliente() +limparCamposCliente()">Inserir
             Cliente</button>
           <button type="button" class="btn btn-primary">Atualizar Cliente</button>
           <button type="botton" class="btn btn-primary">Excluir Cliente</button>
+          <button type="button" class="btn btn-primary" onclick="filtrarCliente()">Clientes já cadastrados</button>
           <label for="observacao" class="obs">*Campos obirgatórios</label>
       </form>
     </div>
