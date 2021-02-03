@@ -18,26 +18,27 @@
         <div class="form-group">
           <label for="inputId">Id</label>
           <input type="text" class="form-control" name="inputId" aria-describedby="nameHelp"
-            placeholder="Id é obrigatório apenas para pesquisar clientes" />
+            placeholder="Id é obrigatório apenas para pesquisar clientes" id="id" />
         </div>
         <div class="form-group">
           <label for="inputName">*Nome</label>
           <input type="text" class="form-control" name="inputName" aria-describedby="nameHelp"
-            placeholder="Nome completo" onblur="validaNome()" />
+            placeholder="Nome completo" onblur="validaNome()" id="nome" />
         </div>
         <div class="form-group">
           <label for="inputAddress">Endereço</label>
-          <input type="text" class="form-control" name="inputAddress" placeholder="Rua, nº, Cidade" />
+          <input type="text" class="form-control" name="inputAddress" placeholder="Rua, nº, Cidade" id="endereco" />
         </div>
 
         <div class="form-group">
           <label for="inputTelephone">*Telefone</label>
           <input type="text" class="form-control" name="inputTelephone" aria-describedby="telephoneHelp"
-            placeholder="cod. área e número" required minlength="12" maxlength="12" onblur="validaTelefone()" />
+            placeholder="cod. área e número" required minlength="12" maxlength="12" onblur="validaTelefone()"
+            id="telefone" />
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" name="inputEmail" placeholder="email@exemplo.com">
+            <input type="text" class="form-control" name="inputEmail" placeholder="email@exemplo.com" id="email">
           </div>
           <button type="button" class="btn btn-primary" onclick="inserirCliente() +limparCamposCliente()">Inserir
             Cliente</button>
