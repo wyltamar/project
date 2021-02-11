@@ -14,9 +14,8 @@ function fetchData() {
           <p>Telefone: ${data[dado].telefone}</p>
           <p>Email: ${data[dado].email}</p>
         </div>`;
-        document
-          .querySelector('#all-clients')
-          .insertAdjacentHTML('afterbegin', html);
+        //prettier-ignore
+        document.querySelector('#all-clients').insertAdjacentHTML('afterbegin', html);
       }
     })
     .catch((Error) => {

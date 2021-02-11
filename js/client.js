@@ -16,9 +16,10 @@ function validaTelefone() {
 }
 
 // buscar cliente pelo 'id'
-var id = document.querySelector('#id');
+const id = document.querySelector('#id');
 
 const showClient = (callback) => {
+  console.log(callback);
   for (const campo in callback) {
     if (document.querySelector('#' + campo)) {
       document.querySelector('#' + campo).value = callback[campo];
@@ -35,7 +36,7 @@ id.addEventListener('blur', (e) => {
     cache: 'default'
   }
 
-  fetch(`http://localhost:3000/cliente/${id}`,options)
+  fetch(`http://localhost:3000/clientes/${id}`,options)
     .then((res)=>{
       res.json().then((dados)=>{
         showClient(dados)
