@@ -1,8 +1,10 @@
 // buscar cliente pelo 'id'
 var id = document.getElementById('id');
+var idCliente;
 
 id.addEventListener('blur', () => {
-  console.log(id.value);
+  idCliente = id.value;
+  console.log(idCliente);
 });
 
 function buscarCliente() {
@@ -21,7 +23,10 @@ function buscarCliente() {
       for (const dado in data) {
         console.log('dentro do for');
         console.log(data[dado]);
-        if (id.value == data[dado].id) {
+        console.log('imprimiu os dados');
+
+        if (idCliente == data[dado].id) {
+          console.log('Entrou no if');
           document.getElementById('id').value = data[dado].id;
           document.getElementById('nome').value = data[dado].nome;
           document.getElementById('endereco').value = data[dado].endereco;
