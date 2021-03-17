@@ -15,39 +15,6 @@ function validaTelefone() {
   } else document.getElementsByClassName('btn btn-primary')[0].disabled = false;
 }
 
-// buscar cliente pelo 'id'
-const id = document.querySelector('#id');
-
-const showClient = (callback) => {
-  console.log(callback);
-  for (const campo in callback) {
-    if (document.querySelector('#' + campo)) {
-      document.querySelector('#' + campo).value = callback[campo];
-    }
-  }
-};
-
-//prettier-ignore
-id.addEventListener('blur', (e) => {
-  let id = id.value;
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    cache: 'default'
-  }
-
-  fetch(`http://localhost:3000/clientes/${id}`,options)
-    .then((res)=>{
-      res.json().then((dados)=>{
-        showClient(dados)
-      })
-    })
-    .catch((e)=>{
-      console.log('Houve um erro:'+e, message)
-    })
-
-})
-
 //inderir cliente
 function inserirCliente() {
   var nome = document.getElementsByName('inputName')[0].value;
