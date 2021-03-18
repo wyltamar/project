@@ -30,7 +30,44 @@ function buscarCliente() {
         }
       }
     })
-    .catch(Error);
+    .catch((Error) => Error);
+}
+
+function update(id, cliente) {
+  var id = document.getElementsByName('inputId')[0].value;
+  var nome = document.getElementsByName('inputName')[0].value;
+  var endereco = document.getElementsByName('inputAddress')[0].value;
+  var telefone = document.getElementsByName('inputTelephone')[0].value;
+  var email = document.getElementsByName('inputEmail')[0].value;
+
+  //prettier-ignore
+  var cliente = {
+    id: id,
+    nome: nome,
+    endereco: endereco,
+    telefone: telefone,
+    email: email
+  };
+
+  //prettier-ignore
+  fetch(`http://localhost:3000/clientes` + "/" + id, {
+    method: 'PATCH',
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     },
+    body: JSON.stringify(cliente)
+  })
+  .then((response)=>{
+    response.json().then(response=>{
+      console.log(response)
+      console.log("Cliente atualizado com sucesso!")
+    })
+  })
+  .catch(err=>{
+    console.error(err)
+  })
 }
 
 buscarCliente();
+update();
