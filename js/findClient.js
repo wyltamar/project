@@ -50,8 +50,8 @@ function update(id, cliente) {
   };
 
   //prettier-ignore
-  fetch(`http://localhost:3000/clientes` + "/" + id, {
-    method: 'PATCH',
+  fetch(`http://localhost:3000/clientes` + "/" + cliente.id, {
+    method: 'PUT',
     headers : { 
       'Content-Type': 'application/json',
       'Accept': 'application/json'
