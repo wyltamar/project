@@ -69,5 +69,14 @@ function update(id, cliente) {
   })
 }
 
+function limparCamposCliente() {
+  document.getElementsByName('inputId')[0].value = '';
+  document.getElementsByName('inputName')[0].value = '';
+  document.getElementsByName('inputAddress')[0].value = '';
+  document.getElementsByName('inputTelephone')[0].value = '';
+  document.getElementsByName('inputEmail')[0].value = '';
+}
+
 buscarCliente();
 update();
+limparCamposCliente();
