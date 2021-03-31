@@ -40,3 +40,34 @@ function inserirUsuario() {
   xhttp.setRequestHeader('Content-Type', 'application/json');
   xhttp.send(JSON.stringify(usuario));
 }
+
+function listarUsuarios() {
+  //prettier-ignore
+  const option = {
+    method: 'GET'
+    
+  }
+  fetch(`http://localhost:3000/usuarios`, option)
+    .then((response) => {
+      if (!response.ok) throw Error('ERROR!');
+      return response.json();
+    })
+    .then((result) => {
+      for (const user in result) {
+        const html = ` 
+          <div class= user>
+            <p>Id: ${result[user].idUsu}</p>
+            <p>Nome: ${result[user].nomeUsu}</p>
+            <p>Login: ${result[user].login}</p>
+            <p>Senha: ${result[user].senha}</p>
+            <p>Telefone: ${result[user].telefone}</p>
+            <p>Perfil: ${result[user].perfil}</p>
+          </div>`;
+        //prettier-ignore
+        document.querySelector('#users').innerHTML = html;
+      }
+    })
+    .catch((Error) => {
+      console.log(Error);
+    });
+}
