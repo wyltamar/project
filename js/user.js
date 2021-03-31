@@ -64,10 +64,11 @@ function listarUsuarios() {
             <p>Perfil: ${result[user].perfil}</p>
           </div>`;
         //prettier-ignore
-        document.querySelector('#users').innerHTML = html;
+        document.querySelector('#all-users').insertAdjacentHTML('afterbegin', html);
       }
     })
     .catch((Error) => {
       console.log(Error);
     });
 }
+listarUsuarios();
