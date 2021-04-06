@@ -25,8 +25,6 @@ function buscarCliente() {
           document.getElementById('endereco').value = data[dado].endereco;
           document.getElementById('telefone').value = data[dado].telefone;
           document.getElementById('email').value = data[dado].email;
-
-          console.log('Consulta bem sucedida!');
         }
       }
     })
@@ -59,13 +57,12 @@ function update(id, cliente) {
     body: JSON.stringify(cliente)
   })
   .then((response)=>{
-    response.json().then(response=>{
-      console.log(response)
-      console.log("Cliente atualizado com sucesso!")
+    return response.json().then(response=>{
+    response.send("Cliente atualizado com sucesso!")
     })
   })
   .catch(err=>{
-    console.error(err)
+    return err
   })
 }
 
