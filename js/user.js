@@ -21,11 +21,11 @@ function inserirUsuario() {
 
   //prettier-ignore
   var usuario = {
-    id: id,
-    nome: nome,
+    idUsu: id,
+    nomeUsu: nome,
     login: login,
     senha: senha,
-    fone: fone,
+    telefone: fone,
     perfil: perfil
   };
 
