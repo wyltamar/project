@@ -71,4 +71,3 @@ function listarUsuarios() {
       console.log(Error);
     });
 }
-listarUsuarios();
