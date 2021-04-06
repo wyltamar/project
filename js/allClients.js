@@ -1,4 +1,4 @@
-function fetchData() {
+function listarClientes() {
   fetch(`http://localhost:3000/clientes`)
     .then((response) => {
       if (!response.ok) throw Error('ERROR!');
@@ -22,5 +22,3 @@ function fetchData() {
       console.log(Error);
     });
 }
-
-fetchData();
