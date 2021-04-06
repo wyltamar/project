@@ -100,8 +100,3 @@ function limparCamposCliente() {
   document.getElementsByName('inputTelephone')[0].value = '';
   document.getElementsByName('inputEmail')[0].value = '';
 }
-
-buscarCliente();
-update();
-excluirCliente();
-limparCamposCliente();
