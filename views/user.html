@@ -20,7 +20,8 @@
         <div class="form-group2">
           <label for="inputId" class="inputId">*Id</label>
           <input type="text" class="form-control" name="inputId" aria-describedby="idHelpUser"
-            placeholder="Insira um Id para pesquisar um usuário " />
+            placeholder="Insira um Id para pesquisar um usuário " onblur="pegarIdUsu()+buscarUsuario()"
+            id="idUsuario" />
         </div>
         <div class="form-group2">
           <label for="inputNameUser">*Nome</label>
