@@ -71,3 +71,12 @@ function listarUsuarios() {
       console.log(Error);
     });
 }
+
+function limparCamposUsuario() {
+  document.getElementsByName('inputId')[0].value = '';
+  document.getElementsByName('inputNameUser')[0].value = '';
+  document.getElementsByName('inputLoginUser')[0].value = '';
+  document.getElementsByName('inputSenhaUser')[0].value = '';
+  document.getElementsByName('inputTelephoneUser')[0].value = '';
+  document.getElementsByName('selectPerfil')[0].value = '';
+}
