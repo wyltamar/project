@@ -47,15 +47,17 @@ function update(id, cliente) {
     email: email
   };
 
-  //prettier-ignore
-  fetch(`http://localhost:3000/clientes` + "/" + cliente.id, {
+  options = {
     method: 'PUT',
-    headers : { 
+    headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
-     },
-    body: JSON.stringify(cliente)
-  })
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(cliente),
+  };
+
+  //prettier-ignore
+  fetch(`http://localhost:3000/clientes` + "/" + cliente.id, options)
   .then((response)=>{
     return response.json().then(response=>{
     response.send("Cliente atualizado com sucesso!")
