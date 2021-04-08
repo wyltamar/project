@@ -46,26 +46,25 @@ function update(id, cliente) {
     telefone: telefone,
     email: email
   };
-
-  options = {
+  //prettier-ignore
+  const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      Accept: 'application/json',
+      Accept: 'application/json'
     },
-    body: JSON.stringify(cliente),
+    body: JSON.stringify(cliente)
   };
 
   //prettier-ignore
   fetch(`http://localhost:3000/clientes` + "/" + cliente.id, options)
   .then((response)=>{
+    if (!response.ok) throw Error('ERROR!');
     return response.json().then(response=>{
     response.send("Cliente atualizado com sucesso!")
     })
   })
-  .catch(err=>{
-    return err
-  })
+  .catch(Error=> Error)
 }
 
 function excluirCliente(id) {
@@ -82,14 +81,13 @@ function excluirCliente(id) {
 
   fetch(`http://localhost:3000/clientes` + '/' + id, options)
     .then((response) => {
+      if (!response.ok) throw Error('ERROR!');
       return response.json();
     })
     .then((dado) => {
       console.log(dado);
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((Error) => Error);
 }
 
 function limparCamposCliente() {
