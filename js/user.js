@@ -105,11 +105,7 @@ function buscarUsuario() {
 
           let perfil = data[dado].perfil;
           switch (perfil) {
-            case 'Administrador ':
-              document.getElementsByName('selectPerfil')[0].value = 1;
-              break;
-
-            case 'administrador ':
+            case 'Administrador':
               document.getElementsByName('selectPerfil')[0].value = 1;
               break;
 
