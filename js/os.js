@@ -66,6 +66,42 @@ function InserirOS() {
 
   limpaCampos();
 }
+
+function listarOSs() {
+  const option = {
+    method: 'GET',
+  };
+  fetch(`http://localhost:3000/os`, option)
+    .then((response) => {
+      if (!response.ok) throw Error('ERROR!');
+      return response.json();
+    })
+    .then((result) => {
+      for (const dados in result) {
+        console.log('entrou');
+        console.log(result[dados].numOs);
+        const html = `
+        <div class = os>
+          <p>Número da OS: ${result[dados].numOs}</p>
+          <p>Data: ${result[dados].dataOs}</p>
+          <p>Tipo: ${result[dados].tipo}</p>
+          <p>Situação: ${result[dados].situacao}</p>
+          <p>Id do Cliente: ${result[dados].idCli}</p>
+          <p>Equipamento: ${result[dados].equipamento}</p>
+          <p>Defeito: ${result[dados].defeito}</p>
+          <p>Serviço: ${result[dados].servico}</p>
+          <p>Técnico: ${result[dados].tecnico}</p>
+          <p>Valor do Serviço: ${result[dados].valor}</p>
+        </div>`;
+        //prettier-ignore
+        document.querySelector("#all-os").insertAdjacentHTML('afterbegin', html);
+      }
+    })
+    .catch((Error) => {
+      console.log(Error);
+    });
+}
+
 function limpaCampos() {
   var situacaoOs = (document.getElementById('situacaoOs').value = '');
   var cliente = (document.getElementById('cliente').value = '');
