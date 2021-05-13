@@ -30,16 +30,6 @@ function InserirOS() {
   var tipo = '';
   checkOs ? (tipo = 'OS') : (tipo = 'Orçamento');
 
-  console.log(situacaoOs);
-  console.log(tipo);
-  console.log(cliente);
-  console.log(idCliente);
-  console.log(equipamento);
-  console.log(defeito);
-  console.log(servico);
-  console.log(tecnico);
-  console.log(valor);
-
   //prettier-ignore
   var os = {
     tipo: tipo,
@@ -78,8 +68,6 @@ function listarOSs() {
     })
     .then((result) => {
       for (const dados in result) {
-        console.log('entrou');
-        console.log(result[dados].numOs);
         const html = `
         <div class = os>
           <p>Número da OS: ${result[dados].numOs}</p>
