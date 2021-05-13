@@ -79,7 +79,7 @@ function listarOSs() {
           <p>Defeito: ${result[dados].defeito}</p>
           <p>Serviço: ${result[dados].servico}</p>
           <p>Técnico: ${result[dados].tecnico}</p>
-          <p>Valor do Serviço: ${result[dados].valor}</p>
+          <p>Valor do Serviço: ${result[dados].valor.toFixed(2)}</p>
         </div>`;
         //prettier-ignore
         document.querySelector("#all-os").insertAdjacentHTML('afterbegin', html);
