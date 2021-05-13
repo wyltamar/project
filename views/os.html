@@ -16,63 +16,60 @@
   </div>
   <div class="content-os">
     <form>
-      <fieldset>
-        <div class="form-group">
-          <label for="numberOs">Nº OS</label>
-          <input type="text" id="numberOs" class="form-control" disabled placeholder="auto" />
-          <label for="data">Data</label>
-          <input type="text" id="data" class="form-control" disabled placeholder="auto" />
+      <div class="form-group">
+        <label for="numberOs">Nº OS</label>
+        <input type="text" id="numberOs" class="form-control" disabled placeholder="auto" />
+        <label for="data">Data</label>
+        <input type="text" id="data" class="form-control" disabled placeholder="auto" />
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="check-os" type="checkbox" id="checkOS" onclick="marcaDesmarca(this)" />
+          <label class="form-check-label" for="checkOs"> OS </label>
+          <input class="check-orcamento" type="checkbox" id="checkOrcamento" onclick="marcaDesmarca(this)" />
+          <label class="form-check-label" for="checkOrcamento">
+            Orçamento
+          </label>
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="check-os" type="checkbox" id="checkOS" onclick="marcaDesmarca(this)" />
-            <label class="form-check-label" for="checkOs"> OS </label>
-            <input class="check-orcamento" type="checkbox" id="checkOrcamento" onclick="marcaDesmarca(this)" />
-            <label class="form-check-label" for="checkOrcamento">
-              Orçamento
-            </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="situacaoOs">Situação da OS</label>
-          <select id="situacaoOs" class="form-control">
-            <option value="1">Selecione</option>
-            <option value="2">Aguardando execução</option>
-            <option value="3">Executada</option>
-            <option value="4">Na bancada</option>
-            <option value="5">Aguardando peças</option>
-          </select>
-        </div>
+      </div>
+      <div class="form-group">
+        <label for="situacaoOs">Situação da OS</label>
+        <select id="situacaoOs" class="form-control">
+          <option value="1">Selecione</option>
+          <option value="2">Aguardando execução</option>
+          <option value="3">Executada</option>
+          <option value="4">Na bancada</option>
+          <option value="5">Aguardando peças</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label for="idCliente">*Id cliente</label>
-          <input type="text" id="idCliente" class="form-control" />
-          <label for="cliente">Cliente</label>
-          <input type="text" id="cliente" class="form-control" disabled placeholder="auto-complet" />
-          <label for="equipamento">*Equipamento</label>
-          <input type="text" id="equipamento" class="form-control" />
-          <label for="defeito">*Defeito</label>
-          <input type="text" id="defeito" class="form-control" />
-          <label for="servico">Serviço</label>
-          <input type="text" id="servico" class="form-control" />
-          <label for="tecnico">Técnico</label>
-          <input type="text" id="tecnico" class="form-control" />
-          <label for="valor">Valor do serviço</label>
-          <input type="text" id="valor" class="form-control" />
-        </div>
+      <div class="form-group">
+        <label for="idCliente">*Id cliente</label>
+        <input type="text" id="idCliente" class="form-control" />
+        <label for="cliente">Cliente</label>
+        <input type="text" id="cliente" class="form-control" disabled placeholder="auto-complet" />
+        <label for="equipamento">*Equipamento</label>
+        <input type="text" id="equipamento" class="form-control" />
+        <label for="defeito">*Defeito</label>
+        <input type="text" id="defeito" class="form-control" />
+        <label for="servico">Serviço</label>
+        <input type="text" id="servico" class="form-control" />
+        <label for="tecnico">Técnico</label>
+        <input type="text" id="tecnico" class="form-control" />
+        <label for="valor">Valor do serviço</label>
+        <input type="text" id="valor" class="form-control" />
+      </div>
 
-        <button type="button" class="btn btn-primary" onclick="InserirOS()">
-          Inserir OS
-        </button>
-        <button type="button" class="btn btn-primary">Atualizar </button>
-        <button type="button" class="btn btn-primary">Excluir </button>
-        <button type="button" class="btn btn-primary" onclick="listarOSs()">Listar OS's</button>
-      </fieldset>
+      <button type="button" class="btn btn-primary" onclick="InserirOS()">
+        Inserir OS
+      </button>
+      <button type="button" class="btn btn-primary">Atualizar </button>
+      <button type="button" class="btn btn-primary">Excluir </button>
+      <button type="button" class="btn btn-primary" onclick="loadDoc('allOs.html')+listarOSs()">Listar
+        OS's</button>
       <label for="observacao" class="obs">*Campos obirgatórios</label>
     </form>
   </div>
-
-  <div class="content-client"></div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -84,6 +81,7 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
   <script src="../js/os.js"></script>
+  <script src="../js/dashboard.js"></script>
 </body>
 
 </html>
