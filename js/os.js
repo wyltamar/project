@@ -1,6 +1,6 @@
 function InserirOS() {
   var situacaoOs = document.getElementById('situacaoOs').value;
-  var cliente = document.getElementById('cliente').value;
+  //var cliente = document.getElementById('cliente').value;
   var idCliente = document.getElementById('idCliente').value;
   var equipamento = document.getElementById('equipamento').value;
   var defeito = document.getElementById('defeito').value;
