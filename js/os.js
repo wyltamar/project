@@ -1,3 +1,10 @@
+var idOs = null;
+
+function buscarIdOs() {
+  let id = document.getElementById('peid-squisa-os');
+  idOs = id.value;
+}
+
 function InserirOS() {
   var situacaoOs = document.getElementById('situacaoOs').value;
   //var cliente = document.getElementById('cliente').value;
@@ -90,18 +97,48 @@ function listarOSs() {
     });
 }
 
+function buscarOs() {
+  buscarIdOs();
+  const option = {
+    metoth: 'GET',
+  };
+  fetch(`http://localhost:3000/os`, option)
+    .then((response) => {
+      if (!response.ok) throw Error('ERROR!');
+      return response.json();
+    })
+    .then((result) => {
+      for (const os in result) {
+        if (idOs == result[os].numOs) {
+          document.getElementById('numberOs').value = result[os].numOs;
+          document.getElementById('data').value = result[os].dataOs;
+          document.getElementById('checkOS').value = result[os].tipo;
+          document.getElementById('situacaoOs').value = result[os].situacao;
+          //document.getElementById('cliente').value = '';
+          document.getElementById('idCliente').value = result[os].idCli;
+          document.getElementById('equipamento').value = result[os].equipamento;
+          document.getElementById('defeito').value = result[os].defeito;
+          document.getElementById('servico').value = result[os].servico;
+          document.getElementById('tecnico').value = result[os].tecnico;
+          document.getElementById('valor').value = result[os].valor;
+        }
+      }
+    })
+    .catch((Error) => {
+      console.log(Error);
+    });
+}
+
 function limpaCampos() {
-  var situacaoOs = (document.getElementById('situacaoOs').value = '');
-  var cliente = (document.getElementById('cliente').value = '');
-  var idCliente = (document.getElementById('idCliente').value = '');
-  var equipamento = (document.getElementById('equipamento').value = '');
-  var defeito = (document.getElementById('defeito').value = '');
-  var servico = (document.getElementById('servico').value = '');
-  var tecnico = (document.getElementById('tecnico').value = '');
-  var valor = (document.getElementById('valor').value = '');
-  var checkOs = (document.getElementsByClassName(
-    'check-os'
-  )[0].checked = false);
+  document.getElementById('situacaoOs').value = '';
+  document.getElementById('cliente').value = '';
+  document.getElementById('idCliente').value = '';
+  document.getElementById('equipamento').value = '';
+  document.getElementById('defeito').value = '';
+  document.getElementById('servico').value = '';
+  document.getElementById('tecnico').value = '';
+  document.getElementById('valor').value = '';
+  document.getElementsByClassName('check-os')[0].checked = false;
 }
 
 function marcaDesmarca(caller) {
