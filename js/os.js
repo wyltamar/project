@@ -1,7 +1,7 @@
 var idOs = null;
 
 function buscarIdOs() {
-  let id = document.getElementById('peid-squisa-os');
+  let id = document.getElementById('pesquisa-os');
   idOs = id.value;
 }
 
