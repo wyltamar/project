@@ -112,8 +112,6 @@ function buscarOs() {
         if (idOs == result[os].numOs) {
           document.getElementById('numberOs').value = result[os].numOs;
           document.getElementById('data').value = result[os].dataOs;
-          document.getElementById('checkOS').value = result[os].tipo;
-          document.getElementById('situacaoOs').value = result[os].situacao;
           //document.getElementById('cliente').value = '';
           document.getElementById('idCliente').value = result[os].idCli;
           document.getElementById('equipamento').value = result[os].equipamento;
@@ -121,6 +119,34 @@ function buscarOs() {
           document.getElementById('servico').value = result[os].servico;
           document.getElementById('tecnico').value = result[os].tecnico;
           document.getElementById('valor').value = result[os].valor;
+
+          if (result[os].tipo == 'OS') {
+            document.getElementById('checkOS').checked = true;
+          } else {
+            document.getElementById('checkOrcamento').checked = true;
+          }
+
+          switch (result[os].situacao) {
+            case 'Selecione':
+              document.getElementById('situacaoOs').value = '1';
+              break;
+
+            case 'Aguardando execução':
+              document.getElementById('situacaoOs').value = '2';
+              break;
+
+            case 'Executada':
+              document.getElementById('situacaoOs').value = '3';
+              break;
+
+            case 'Na bancada':
+              document.getElementById('situacaoOs').value = '4';
+              break;
+
+            default:
+              document.getElementById('situacaoOs').value = '5';
+              break;
+          }
         }
       }
     })
@@ -146,4 +172,8 @@ function marcaDesmarca(caller) {
   for (let i = 0; i < checks.length; i++) {
     checks[i].checked = checks[i] == caller;
   }
+}
+
+function limpaBuscarPorId() {
+  document.getElementById('pesquisa-os').value = '';
 }
