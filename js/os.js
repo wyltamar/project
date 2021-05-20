@@ -1,4 +1,5 @@
 var idOs = null;
+var idCliente = null;
 
 function buscarIdOs() {
   let id = document.getElementById('pesquisa-os');
@@ -110,6 +111,8 @@ function buscarOs() {
     .then((result) => {
       for (const os in result) {
         if (idOs == result[os].numOs) {
+          idCliente = result[os].idCli;
+
           document.getElementById('numberOs').value = result[os].numOs;
           document.getElementById('data').value = result[os].dataOs;
           //document.getElementById('cliente').value = '';
@@ -153,12 +156,38 @@ function buscarOs() {
     .catch((Error) => {
       console.log(Error);
     });
+
+  buscarClienteOs();
+}
+
+function buscarClienteOs() {
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    cache: 'default',
+  };
+
+  fetch(`http://localhost:3000/clientes`, options)
+    .then((response) => {
+      if (!response.ok) throw Error('ERROR!');
+      return response.json();
+    })
+    .then((data) => {
+      for (const dado in data) {
+        if (idCliente == data[dado].id) {
+          document.getElementById('cliente').value = data[dado].nome;
+          document.getElementById('telefone').value = data[dado].telefone;
+        }
+      }
+    })
+    .catch((Error) => Error);
 }
 
 function limpaCampos() {
   document.getElementById('situacaoOs').value = '';
   document.getElementById('cliente').value = '';
   document.getElementById('idCliente').value = '';
+  document.getElementById('telefone').value = '';
   document.getElementById('equipamento').value = '';
   document.getElementById('defeito').value = '';
   document.getElementById('servico').value = '';
