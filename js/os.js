@@ -249,6 +249,31 @@ function buscarClienteOs() {
     .catch((Error) => Error);
 }
 
+function excluirOs(numOs) {
+  numOs = document.getElementById('numberOs').value;
+
+  //prettier-ignore
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type':'application/json'
+    },
+    body: null
+  }
+
+  fetch(`http://localhost:3000/os` + '/' + numOs, options)
+    .then((response) => {
+      if (!response.ok) throw Error('ERROR!');
+      response.json();
+    })
+    .then((osExcluida) => {
+      console.log(osExcluida);
+    })
+    .catch(() => Error);
+
+  limpaCampos();
+}
+
 function limpaCampos() {
   document.getElementById('numberOs').value = '';
   document.getElementById('data').value = '';
