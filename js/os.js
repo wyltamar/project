@@ -119,7 +119,7 @@ function atualizarOs(numOs, os) {
     body: JSON.stringify(os)
   };
 
-  fetch(`http://localhost:3000/os` + '/' + numeOs, options)
+  fetch(`http://localhost:3000/os` + '/' + numOs, options)
     .then((response) => {
       if (!response.ok) throw Error('ERROR!');
       return response.json().then((response) => {
@@ -127,6 +127,8 @@ function atualizarOs(numOs, os) {
       });
     })
     .catch((Error) => Error);
+
+  limpaCampos();
 }
 
 function listarOSs() {
@@ -248,6 +250,8 @@ function buscarClienteOs() {
 }
 
 function limpaCampos() {
+  document.getElementById('numberOs').value = '';
+  document.getElementById('data').value = '';
   document.getElementById('situacaoOs').value = '';
   document.getElementById('cliente').value = '';
   document.getElementById('idCliente').value = '';
