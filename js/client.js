@@ -7,9 +7,18 @@ function pegarId() {
 
 function validaNome() {
   var nome = document.getElementsByName('inputName')[0].value;
+
+  console.log(nome);
+
   if (nome == '') {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
-  } else document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  }
 }
 
 function validaTelefone() {
@@ -17,7 +26,13 @@ function validaTelefone() {
   var telefone = document.getElementsByName('inputTelephone')[0].value;
   if (telefone == '') {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
-  } else document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  }
 }
 
 //inderir cliente
