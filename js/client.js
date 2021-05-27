@@ -1,5 +1,23 @@
 var idCliente;
 
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: false,
+  positionClass: 'toast-top-right',
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: '300',
+  hideDuration: '1000',
+  timeOut: '5000',
+  extendedTimeOut: '1000',
+  showEasing: 'swing',
+  hideEasing: 'linear',
+  showMethod: 'fadeIn',
+  hideMethod: 'fadeOut',
+};
+
 function pegarId() {
   let id = document.getElementById('id').value;
   idCliente = id;
@@ -8,12 +26,11 @@ function pegarId() {
 function validaNome() {
   var nome = document.getElementsByName('inputName')[0].value;
 
-  console.log(nome);
-
   if (nome == '') {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    toastr['success']('Por favor, infomre o nome!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;
@@ -28,6 +45,7 @@ function validaTelefone() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    toastr['success']('Por favor, informe o telefone!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;
