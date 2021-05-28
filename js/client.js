@@ -30,7 +30,7 @@ function validaNome() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
-    toastr['success']('Por favor, infomre o nome!');
+    toastr['warning']('Por favor, infomre o nome!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;
@@ -45,7 +45,7 @@ function validaTelefone() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
-    toastr['success']('Por favor, informe o telefone!');
+    toastr['warning']('Por favor, informe o telefone!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;

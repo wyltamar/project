@@ -226,7 +226,7 @@ function validaCampoId() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
-    toastr['success']('Por favor, infomre o Id!');
+    toastr['warning']('Informe o Id!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;
@@ -241,7 +241,7 @@ function validaCampoNome() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
-    toastr['success']('Por favor, infomre o nome!');
+    toastr['warning']('Infomre o nome!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;
@@ -255,7 +255,7 @@ function validaCampoLogin() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
-    toastr['success']('Por favor, infomre o login!');
+    toastr['warning']('Informe o login!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;
@@ -269,7 +269,7 @@ function validaCampoSenha() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
-    toastr['success']('Por favor, infomre a senha!');
+    toastr['warning']('Informe a senha!');
   } else {
     document.getElementsByClassName('btn btn-primary')[0].disabled = false;
     document.getElementsByClassName('btn btn-primary')[1].disabled = false;
@@ -287,6 +287,6 @@ function validaCampoPerfil() {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
     document.getElementsByClassName('btn btn-primary')[2].disabled = true;
-    toastr['success']('Selecione um perfil válido!');
+    toastr['warning']('Selecione um perfil válido!');
   }
 }
