@@ -1,5 +1,23 @@
 var idUsuario;
 
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: false,
+  positionClass: 'toast-top-right',
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: '300',
+  hideDuration: '1000',
+  timeOut: '5000',
+  extendedTimeOut: '1000',
+  showEasing: 'swing',
+  hideEasing: 'linear',
+  showMethod: 'fadeIn',
+  hideMethod: 'fadeOut',
+};
+
 function pegarIdUsu() {
   idUsuario = document.getElementById('idUsuario').value;
 }
@@ -199,4 +217,76 @@ function limparCamposUsuario() {
   document.getElementsByName('inputSenhaUser')[0].value = '';
   document.getElementsByName('inputTelephoneUser')[0].value = '';
   document.getElementsByName('selectPerfil')[0].value = '';
+}
+
+function validaCampoId() {
+  const id = document.getElementsByName('inputId')[0].value;
+
+  if (id == '') {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    toastr['success']('Por favor, infomre o Id!');
+  } else {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  }
+}
+
+function validaCampoNome() {
+  const nome = document.getElementsByName('inputNameUser')[0].value;
+
+  if (nome == '') {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    toastr['success']('Por favor, infomre o nome!');
+  } else {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  }
+}
+function validaCampoLogin() {
+  const login = document.getElementsByName('inputLoginUser')[0].value;
+
+  if (login == '') {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    toastr['success']('Por favor, infomre o login!');
+  } else {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  }
+}
+function validaCampoSenha() {
+  const senha = document.getElementsByName('inputSenhaUser')[0].value;
+
+  if (senha == '') {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    toastr['success']('Por favor, infomre a senha!');
+  } else {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  }
+}
+function validaCampoPerfil() {
+  const perfil = document.getElementsByName('selectPerfil')[0].value;
+
+  if (perfil == '1' || perfil == '2') {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[0].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    toastr['success']('Selecione um perfil válido!');
+  }
 }
