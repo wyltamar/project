@@ -44,7 +44,7 @@
       </div>
       <div class="form-group">
         <label for="situacaoOs">Situação da OS</label>
-        <select id="situacaoOs" class="form-control">
+        <select id="situacaoOs" class="form-control" onclick="validaTipo()">
           <option value="1">Selecione</option>
           <option value="2">Aguardando execução</option>
           <option value="3">Executada</option>
@@ -55,15 +55,15 @@
 
       <div class="form-group">
         <label for="idCliente">*Id cliente</label>
-        <input type="text" id="idCliente" class="form-control" />
+        <input type="text" id="idCliente" class="form-control" onblur="validaIdCli()" />
         <label for="cliente">Cliente</label>
         <input type="text" id="cliente" class="form-control" disabled placeholder="auto-complet" />
         <label for="cliente">Telefone do cliente</label>
         <input type="text" id="telefone" class="form-control" disabled placeholder="auto-complet" />
         <label for="equipamento">*Equipamento</label>
-        <input type="text" id="equipamento" class="form-control" />
+        <input type="text" id="equipamento" class="form-control" onblur="validaTipoEquipamento()" />
         <label for="defeito">*Defeito</label>
-        <input type="text" id="defeito" class="form-control" />
+        <input type="text" id="defeito" class="form-control" onblur="validaDefeito()" />
         <label for="servico">Serviço</label>
         <input type="text" id="servico" class="form-control" />
         <label for="tecnico">Técnico</label>

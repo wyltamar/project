@@ -1,6 +1,24 @@
 var idOs = null;
 var idCliente = null;
 
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: false,
+  positionClass: 'toast-top-right',
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: '300',
+  hideDuration: '1000',
+  timeOut: '5000',
+  extendedTimeOut: '1000',
+  showEasing: 'swing',
+  hideEasing: 'linear',
+  showMethod: 'fadeIn',
+  hideMethod: 'fadeOut',
+};
+
 function buscarIdOs() {
   let id = document.getElementById('pesquisa-os');
   idOs = id.value;
@@ -298,4 +316,68 @@ function marcaDesmarca(caller) {
 
 function limpaBuscarPorId() {
   document.getElementById('pesquisa-os').value = '';
+}
+
+function validaTipo() {
+  const checkOs = document.getElementsByClassName('check-os')[0].checked;
+  const checkOrcamento = document.getElementsByClassName('check-orcamento')[0]
+    .checked;
+
+  if (checkOs == false && checkOrcamento == false) {
+    toastr['warning'](
+      'É obrigatório selecionar um dos checks acima: Ordem de Serviço ou Orçamento'
+    );
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = true;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = false;
+  }
+}
+
+function validaIdCli() {
+  const idCliente = document.getElementById('idCliente');
+
+  if (idCliente.value.trim().length == 0) {
+    toastr['warning']('O Id do Cliente é obrigatório');
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = true;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = false;
+  }
+}
+
+function validaTipoEquipamento() {
+  const equipamento = document.getElementById('equipamento');
+
+  if (equipamento.value.trim().length == 0) {
+    toastr['warning']('O campo equipamento é obrigatório');
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = true;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = false;
+  }
+}
+
+function validaDefeito() {
+  const defeito = document.getElementById('defeito');
+
+  if (defeito.value.trim().length == 0) {
+    toastr['warning']('O campo defeito é obrigatório');
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = true;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[3].disabled = false;
+  }
 }
