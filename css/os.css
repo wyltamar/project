@@ -30,3 +30,8 @@ form {
 #valor {
   width: 30%;
 }
+
+#btn-pesquisar {
+  margin-top: 10px;
+  align-self: center;
+}
