@@ -268,28 +268,30 @@ function buscarClienteOs() {
 }
 
 function excluirOs(numOs) {
-  numOs = document.getElementById('numberOs').value;
+  if (window.confirm('Você realmente deseja excluir esta Ordem de Serviço?')) {
+    numOs = document.getElementById('numberOs').value;
 
-  //prettier-ignore
-  const options = {
-    method: 'DELETE',
-    headers: {
-      'Content-Type':'application/json'
-    },
-    body: null
+    //prettier-ignore
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: null
+    }
+
+    fetch(`http://localhost:3000/os` + '/' + numOs, options)
+      .then((response) => {
+        if (!response.ok) throw Error('ERROR!');
+        response.json();
+      })
+      .then((osExcluida) => {
+        console.log(osExcluida);
+      })
+      .catch(() => Error);
+
+    limpaCampos();
   }
-
-  fetch(`http://localhost:3000/os` + '/' + numOs, options)
-    .then((response) => {
-      if (!response.ok) throw Error('ERROR!');
-      response.json();
-    })
-    .then((osExcluida) => {
-      console.log(osExcluida);
-    })
-    .catch(() => Error);
-
-  limpaCampos();
 }
 
 function limpaCampos() {

@@ -167,26 +167,28 @@ function update(id, cliente) {
 }
 
 function excluirCliente(id) {
-  var id = document.getElementsByName('inputId')[0].value;
+  if (window.confirm('Você realmente deseja excluir este Cliente?')) {
+    var id = document.getElementsByName('inputId')[0].value;
 
-  //prettier-ignore
-  const options = {
-    method: 'DELETE',
-    headers: {
-      'Content-Type':'application/json'
-    },
-    body: null
+    //prettier-ignore
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: null
+    }
+
+    fetch(`http://localhost:3000/clientes` + '/' + id, options)
+      .then((response) => {
+        if (!response.ok) throw Error('ERROR!');
+        return response.json();
+      })
+      .then((dado) => {
+        console.log(dado);
+      })
+      .catch((Error) => Error);
   }
-
-  fetch(`http://localhost:3000/clientes` + '/' + id, options)
-    .then((response) => {
-      if (!response.ok) throw Error('ERROR!');
-      return response.json();
-    })
-    .then((dado) => {
-      console.log(dado);
-    })
-    .catch((Error) => Error);
 }
 
 //prettier-ignore

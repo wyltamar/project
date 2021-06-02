@@ -192,23 +192,25 @@ function atualizarUsuario(id, usuario) {
 }
 
 function excluirUsuario(id) {
-  var idUsu = document.getElementById('idUsuario').value;
+  if (window.confirm('Você realmente deseja excluir este Usuário?')) {
+    var idUsu = document.getElementById('idUsuario').value;
 
-  const options = {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: null,
-  };
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: null,
+    };
 
-  fetch('http://localhost:3000/usuarios' + '/' + idUsu, options)
-    .then((response) => {
-      if (!response.ok) throw Error('ERROR!');
-      return response.json();
-    })
-    .then((data) => console.log(data))
-    .catch((err) => err.Error);
+    fetch('http://localhost:3000/usuarios' + '/' + idUsu, options)
+      .then((response) => {
+        if (!response.ok) throw Error('ERROR!');
+        return response.json();
+      })
+      .then((data) => console.log(data))
+      .catch((err) => err.Error);
+  }
 }
 function limparCamposUsuario() {
   document.getElementsByName('inputId')[0].value = '';
