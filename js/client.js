@@ -77,6 +77,8 @@ function inserirCliente() {
   xhttp.open('POST', 'http://localhost:3000/clientes', true);
   xhttp.setRequestHeader('Content-Type', 'application/json');
   xhttp.send(JSON.stringify(cliente));
+
+  toastr['success']('Cliente cadastrado com sucesso!');
 }
 
 function listarClientes() {
@@ -164,6 +166,7 @@ function update(id, cliente) {
     })
   })
   .catch(Error=> Error)
+  toastr['success']('Cliente atualizado com sucesso!');
 }
 
 function excluirCliente(id) {
@@ -188,6 +191,7 @@ function excluirCliente(id) {
         console.log(dado);
       })
       .catch((Error) => Error);
+    toastr['success']('Cliente excluido com sucesso!');
   }
 }
 
