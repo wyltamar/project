@@ -80,6 +80,7 @@ function InserirOS() {
   xhttp.send(JSON.stringify(os));
 
   limpaCampos();
+  toastr['success']('Ordem de serviço inserida com sucesso');
 }
 
 function atualizarOs(numOs, os) {
@@ -147,6 +148,7 @@ function atualizarOs(numOs, os) {
     .catch((Error) => Error);
 
   limpaCampos();
+  toastr['success']('Ordem de serviço atualizada com sucesso');
 }
 
 function listarOSs() {
@@ -291,6 +293,7 @@ function excluirOs(numOs) {
       .catch(() => Error);
 
     limpaCampos();
+    toastr['success']('Ordem de serviço excluída com sucesso');
   }
 }
 
