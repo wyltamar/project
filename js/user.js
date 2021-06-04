@@ -63,6 +63,8 @@ function inserirUsuario() {
   xhttp.open('POST', 'http://localhost:3000/usuarios', true);
   xhttp.setRequestHeader('Content-Type', 'application/json');
   xhttp.send(JSON.stringify(usuario));
+
+  toastr['success']('Usuário cadstrado com sucesso');
 }
 
 function listarUsuarios() {
@@ -189,6 +191,8 @@ function atualizarUsuario(id, usuario) {
       console.log(result);
     })
     .catch((err) => err.Error);
+
+  toastr['success']('Usuário atualizado com sucesso');
 }
 
 function excluirUsuario(id) {
@@ -210,6 +214,7 @@ function excluirUsuario(id) {
       })
       .then((data) => console.log(data))
       .catch((err) => err.Error);
+    toastr['success']('Usuário excluído com sucesso');
   }
 }
 function limparCamposUsuario() {
