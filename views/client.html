@@ -18,8 +18,8 @@
         <div class="form-group">
           <label for="inputId">Id</label>
           <input type="text" class="form-control" name="inputId" aria-describedby="nameHelp"
-            placeholder="Informe o ID para pesquisar um cliente específico" id="id"
-            onblur="pegarId() +buscarCliente()" />
+            placeholder="Informe o ID para pesquisar um cliente específico" id="id" onblur="pegarId() +buscarCliente()"
+            required minlength="" />
         </div>
         <div class="form-group">
           <label for="inputName">*Nome</label>
@@ -34,8 +34,7 @@
         <div class="form-group">
           <label for="inputTelephone">*Telefone</label>
           <input type="text" class="form-control" name="inputTelephone" aria-describedby="telephoneHelp"
-            placeholder="cod. área e número" required minlength="12" maxlength="12" onblur="validaTelefone()"
-            id="telefone" />
+            placeholder="cod. área e número" maxlength="12" onblur="validaTelefone()" id="telefone" />
 
           <div class="form-group">
             <label for="email">Email</label>

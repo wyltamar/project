@@ -39,8 +39,7 @@ function validaNome() {
 }
 
 function validaTelefone() {
-  validaNome();
-  var telefone = document.getElementsByName('inputTelephone')[0].value;
+  let telefone = document.getElementsByName('inputTelephone')[0].value;
   if (telefone == '') {
     document.getElementsByClassName('btn btn-primary')[0].disabled = true;
     document.getElementsByClassName('btn btn-primary')[1].disabled = true;
@@ -170,7 +169,7 @@ function update(id, cliente) {
 }
 
 function excluirCliente(id) {
-  if (window.confirm('Você realmente deseja excluir este Cliente?')) {
+  if (window.confirm('Deseja realmente remover o cliente?')) {
     var id = document.getElementsByName('inputId')[0].value;
 
     //prettier-ignore
@@ -191,7 +190,8 @@ function excluirCliente(id) {
         console.log(dado);
       })
       .catch((Error) => Error);
-    toastr['success']('Cliente excluido com sucesso!');
+
+    toastr['success']('Cliente removido com sucesso!');
   }
 }
 
