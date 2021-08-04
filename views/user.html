@@ -49,19 +49,23 @@
           <div class="input-group-prepend">
             <label class="input-group-text" for="selectPerfil">*Perfil</label>
           </div>
-          <select class="form-control" name="selectPerfil" onmousemove="validaCampoPerfil()"
-            onmouseout="validaCampoPerfil()">
+          <select class="form-control" name="selectPerfil">
             <option selected>Selecione</option>
             <option value="1">Administrador</option>
             <option value="2">Usuário</option>
           </select>
         </div>
-        <button type="button" class="btn btn-primary" onclick="inserirUsuario()+limparCamposUsuario()">Inserir
+        <button type="button" class="btn btn-primary" onmousemove="validaCampoPerfil()"
+          onclick="inserirUsuario()+limparCamposUsuario()">Inserir
           Usuário</button>
-        <button type="button" class="btn btn-primary" onclick="atualizarUsuario()+limparCamposUsuario()">Atualizar
-          Usuário</button>
-        <button type="button" class="btn btn-primary" onclick="excluirUsuario()+limparCamposUsuario()">Excluir
-          Usuário</button>
+        <button type="button" class="btn btn-primary" onmousemove="validaCampoPerfil()"
+          onclick="atualizarUsuario()+limparCamposUsuario()">Atualizar Usuário
+        </button>
+
+        <button type="button" class="btn btn-primary" onmousemove="validaCampoPerfil()"
+          onclick="excluirUsuario()+limparCamposUsuario()">ExcluirUsuário
+        </button>
+
         <button type="button" class="btn btn-primary" onclick="loadDoc('allUsers.html')+listarUsuarios()">Listar
           Usuários</button>
         <label for="observacao" class="obs">*Campos obirgatórios</label>
