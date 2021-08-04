@@ -144,55 +144,57 @@ function buscarUsuario() {
 }
 
 function atualizarUsuario(id, usuario) {
-  var id = document.getElementsByName('inputId')[0].value;
-  var nome = document.getElementsByName('inputNameUser')[0].value;
-  var login = document.getElementsByName('inputLoginUser')[0].value;
-  var senha = document.getElementsByName('inputSenhaUser')[0].value;
-  var fone = document.getElementsByName('inputTelephoneUser')[0].value;
-  var perfil = document.getElementsByName('selectPerfil')[0].value;
+  if (window.confirm('Deseja realmente atualizar os dados do usuário?')) {
+    var id = document.getElementsByName('inputId')[0].value;
+    var nome = document.getElementsByName('inputNameUser')[0].value;
+    var login = document.getElementsByName('inputLoginUser')[0].value;
+    var senha = document.getElementsByName('inputSenhaUser')[0].value;
+    var fone = document.getElementsByName('inputTelephoneUser')[0].value;
+    var perfil = document.getElementsByName('selectPerfil')[0].value;
 
-  switch (perfil) {
-    case '1':
-      perfil = 'Administrador';
-      break;
-    case '2':
-      perfil = 'Usuário';
-      break;
+    switch (perfil) {
+      case '1':
+        perfil = 'Administrador';
+        break;
+      case '2':
+        perfil = 'Usuário';
+        break;
 
-    default:
-      perfil = 'Selecione';
-      break;
+      default:
+        perfil = 'Selecione';
+        break;
+    }
+
+    //prettier-ignore
+    var usuario = {
+      idUsu: id,
+      nomeUsu: nome,
+      login: login,
+      senha: senha,
+      telefone: fone,
+      perfil: perfil
+    };
+
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(usuario),
+    };
+    fetch('http://localhost:3000/usuarios' + '/' + usuario.idUsu, options)
+      .then((response) => {
+        if (!response.ok) throw Error('ERROR!');
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => err.Error);
+
+    toastr['success']('Usuário atualizado com sucesso');
   }
-
-  //prettier-ignore
-  var usuario = {
-    idUsu: id,
-    nomeUsu: nome,
-    login: login,
-    senha: senha,
-    telefone: fone,
-    perfil: perfil
-  };
-
-  const options = {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify(usuario),
-  };
-  fetch('http://localhost:3000/usuarios' + '/' + usuario.idUsu, options)
-    .then((response) => {
-      if (!response.ok) throw Error('ERROR!');
-      return response.json();
-    })
-    .then((result) => {
-      console.log(result);
-    })
-    .catch((err) => err.Error);
-
-  toastr['success']('Usuário atualizado com sucesso');
 }
 
 function excluirUsuario(id) {

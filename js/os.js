@@ -84,71 +84,73 @@ function InserirOS() {
 }
 
 function atualizarOs(numOs, os) {
-  var numOs = document.getElementById('numberOs').value;
-  var situacaoOs = document.getElementById('situacaoOs').value;
-  var idCliente = document.getElementById('idCliente').value;
-  var equipamento = document.getElementById('equipamento').value;
-  var defeito = document.getElementById('defeito').value;
-  var servico = document.getElementById('servico').value;
-  var tecnico = document.getElementById('tecnico').value;
-  var valor = document.getElementById('valor').value;
-  var checkOs = document.getElementsByClassName('check-os')[0].checked;
+  if (confirm('Deseja atualizar os dados da Ordem de Serviço?')) {
+    var numOs = document.getElementById('numberOs').value;
+    var situacaoOs = document.getElementById('situacaoOs').value;
+    var idCliente = document.getElementById('idCliente').value;
+    var equipamento = document.getElementById('equipamento').value;
+    var defeito = document.getElementById('defeito').value;
+    var servico = document.getElementById('servico').value;
+    var tecnico = document.getElementById('tecnico').value;
+    var valor = document.getElementById('valor').value;
+    var checkOs = document.getElementsByClassName('check-os')[0].checked;
 
-  switch (situacaoOs) {
-    case '1':
-      situacaoOs = 'Selecione';
-      break;
-    case '2':
-      situacaoOs = 'Aguardando execução';
-      break;
-    case '3':
-      situacaoOs = 'Executada';
-      break;
-    case '4':
-      situacaoOs = 'Na bancada';
-      break;
-    default:
-      situacaoOs = 'Aguardando peças';
-      break;
+    switch (situacaoOs) {
+      case '1':
+        situacaoOs = 'Selecione';
+        break;
+      case '2':
+        situacaoOs = 'Aguardando execução';
+        break;
+      case '3':
+        situacaoOs = 'Executada';
+        break;
+      case '4':
+        situacaoOs = 'Na bancada';
+        break;
+      default:
+        situacaoOs = 'Aguardando peças';
+        break;
+    }
+
+    var tipo = null;
+    checkOs ? (tipo = 'OS') : (tipo = 'Orçamento');
+
+    //prettier-ignore
+    var os = {
+      numOs: numOs,
+      tipo: tipo,
+      situacao: situacaoOs,
+      idCli: idCliente,
+      equipamento: equipamento,
+      defeito: defeito,
+      servico: servico,
+      tecnico: tecnico,
+      valor: valor
+    };
+
+    //prettier-ignore
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(os)
+    };
+
+    fetch(`http://localhost:3000/os` + '/' + numOs, options)
+      .then((response) => {
+        if (!response.ok) throw Error('ERROR!');
+        return response.json().then((response) => {
+          response.send('Ordem de Serviço Atualizada com sucesso!');
+        });
+      })
+      .catch((Error) => Error);
+
+    limpaCampos();
+    toastr['success']('Ordem de serviço atualizada com sucesso');
   }
-
-  var tipo = null;
-  checkOs ? (tipo = 'OS') : (tipo = 'Orçamento');
-
-  //prettier-ignore
-  var os = {
-    numOs: numOs,
-    tipo: tipo,
-    situacao: situacaoOs,
-    idCli: idCliente,
-    equipamento: equipamento,
-    defeito: defeito,
-    servico: servico,
-    tecnico: tecnico,
-    valor: valor
-  };
-
-  //prettier-ignore
-  const options = {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify(os)
-  };
-
-  fetch(`http://localhost:3000/os` + '/' + numOs, options)
-    .then((response) => {
-      if (!response.ok) throw Error('ERROR!');
-      return response.json().then((response) => {
-        response.send('Ordem de Serviço Atualizada com sucesso!');
-      });
-    })
-    .catch((Error) => Error);
-
-  limpaCampos();
-  toastr['success']('Ordem de serviço atualizada com sucesso');
 }
 
 function listarOSs() {

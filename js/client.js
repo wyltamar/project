@@ -132,66 +132,68 @@ function buscarCliente() {
 }
 
 function update(id, cliente) {
-  var id = document.getElementsByName('inputId')[0].value;
-  var nome = document.getElementsByName('inputName')[0].value;
-  var endereco = document.getElementsByName('inputAddress')[0].value;
-  var telefone = document.getElementsByName('inputTelephone')[0].value;
-  var email = document.getElementsByName('inputEmail')[0].value;
-
-  //prettier-ignore
-  var cliente = {
-    id: id,
-    nome: nome,
-    endereco: endereco,
-    telefone: telefone,
-    email: email
-  };
-  //prettier-ignore
-  const options = {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-    },
-    body: JSON.stringify(cliente)
-  };
-
-  //prettier-ignore
-  fetch(`http://localhost:3000/clientes` + "/" + cliente.id, options)
-  .then((response)=>{
-    if (!response.ok) throw Error('ERROR!');
-    return response.json().then(response=>{
-    response.send("Cliente atualizado com sucesso!")
-    })
-  })
-  .catch(Error=> Error)
-  toastr['success']('Cliente atualizado com sucesso!');
-}
-
-function excluirCliente(id) {
-  if (window.confirm('Deseja realmente remover o cliente?')) {
+  if (window.confirm('Deseja realmente atualizar os dados do cliente?')) {
     var id = document.getElementsByName('inputId')[0].value;
+    var nome = document.getElementsByName('inputName')[0].value;
+    var endereco = document.getElementsByName('inputAddress')[0].value;
+    var telefone = document.getElementsByName('inputTelephone')[0].value;
+    var email = document.getElementsByName('inputEmail')[0].value;
 
     //prettier-ignore
+    var cliente = {
+      id: id,
+      nome: nome,
+      endereco: endereco,
+      telefone: telefone,
+      email: email
+    };
+    //prettier-ignore
     const options = {
-      method: 'DELETE',
+      method: 'PUT',
       headers: {
-        'Content-Type':'application/json'
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
       },
-      body: null
+      body: JSON.stringify(cliente)
+    };
+
+    //prettier-ignore
+    fetch(`http://localhost:3000/clientes` + "/" + cliente.id, options)
+    .then((response)=>{
+      if (!response.ok) throw Error('ERROR!');
+      return response.json().then(response=>{
+      response.send("Cliente atualizado com sucesso!")
+      })
+    })
+    .catch(Error=> Error)
+    toastr['success']('Cliente atualizado com sucesso!');
+  }
+
+  function excluirCliente(id) {
+    if (window.confirm('Deseja realmente remover o cliente?')) {
+      var id = document.getElementsByName('inputId')[0].value;
+
+      //prettier-ignore
+      const options = {
+        method: 'DELETE',
+        headers: {
+          'Content-Type':'application/json'
+        },
+        body: null
+      }
+
+      fetch(`http://localhost:3000/clientes` + '/' + id, options)
+        .then((response) => {
+          if (!response.ok) throw Error('ERROR!');
+          return response.json();
+        })
+        .then((dado) => {
+          console.log(dado);
+        })
+        .catch((Error) => Error);
+
+      toastr['success']('Cliente removido com sucesso!');
     }
-
-    fetch(`http://localhost:3000/clientes` + '/' + id, options)
-      .then((response) => {
-        if (!response.ok) throw Error('ERROR!');
-        return response.json();
-      })
-      .then((dado) => {
-        console.log(dado);
-      })
-      .catch((Error) => Error);
-
-    toastr['success']('Cliente removido com sucesso!');
   }
 }
 
