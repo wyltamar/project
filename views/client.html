@@ -40,11 +40,14 @@
             <label for="email">Email</label>
             <input type="text" class="form-control" name="inputEmail" placeholder="email@exemplo.com" id="email">
           </div>
-          <button type="button" class="btn btn-primary" onclick="inserirCliente() +limparCamposCliente()">Inserir
+          <button type="button" class="btn btn-primary" onmousemove="validaNome()+validaTelefone()"
+            onclick="inserirCliente() +limparCamposCliente()">Inserir
             Cliente</button>
-          <button type="button" class="btn btn-primary" onclick="update() +limparCamposCliente()">Atualizar
+          <button type="button" class="btn btn-primary" onmousemove="validaNome()+validaTelefone()+verificaIdVazio()"
+            onclick="update() +limparCamposCliente()">Atualizar
             Cliente</button>
-          <button type="botton" class="btn btn-primary" onclick="excluirCliente() +limparCamposCliente()">Excluir
+          <button type="botton" class="btn btn-primary" onmousemove="validaNome()+validaTelefone()+verificaIdVazio()"
+            onclick="excluirCliente() +limparCamposCliente()">Excluir
             Cliente</button>
           <button type="button" class="btn btn-primary" onclick="loadDoc('allClients.html') +listarClientes()">Clientes
             já

@@ -206,3 +206,15 @@ function limparCamposCliente(){
   document.getElementById('id').value = "";
 
 }
+
+function verificaIdVazio() {
+  let id = document.getElementById('id').value;
+
+  if (id === '') {
+    document.getElementsByClassName('btn btn-primary')[1].disabled = true;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = true;
+  } else {
+    document.getElementsByClassName('btn btn-primary')[1].disabled = false;
+    document.getElementsByClassName('btn btn-primary')[2].disabled = false;
+  }
+}
